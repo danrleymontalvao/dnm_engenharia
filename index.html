@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de imóveis</title>
+    <script src="app.js"></script>
+    <script src="main.js"></script>
+    <script src="propriedade.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+</head>
+<body>
+    <header>
+        <section class="hero is-primary">
+            <div class="hero-body">
+            <p class="title">
+            DNM ENGENHARIA
+            </p>
+            <p class="subtitle">
+            Sistema de Cadastro de Imóveis para Locação
+            </p>
+            </div>
+            </section>
+    </header>
+    <div class="container">
+        <form onsubmit="app.registro()">
+        <div class="tile">
+            <div class="tile is-parent is-vertical">
+              <article class="tile is-child notification is-warning">
+                <p class="title">
+                    <div class="select">
+                        <select name="tipo">
+                          <option>Casa</option>
+                          <option>Apartamento</option>
+                        </select>
+                      </div>
+                      <div class="field">
+                        <label class="label">Informe a área do imóvel</label>
+                        <div class="control">
+                          <input class="input is-small" type="text" placeholder="area em m2" name="area">
+                        </div>
+                      </div>
+                      <div class="field">
+                        <label class="label">Informe o valor do aluguel</label>
+                        <div class="control">
+                          <input class="input is-small" type="text" placeholder="valor em reais (R$)" name="valor">
+                        </div>
+                      </div>
+                      <label class="checkbox">
+                        <input type="checkbox" name="alugado">
+                        Alugado
+                      </label>
+                      <div class="buttons">
+                        <button class="button is-primary" type="submit">Registrar Imóvel</button>
+                        <button class="button is-danger" type="button" onclick="app.limparForm()">Limpar</button>
+                      </div>
+                </p>
+                <h3 class="title is-3">Imóveis Cadastrados</h3>
+                <ul id="lista"></ul>
+              </article>
+            </div>
+        </form>    
+    </div>
+</body>
+</html>
